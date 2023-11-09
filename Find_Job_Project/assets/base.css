@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
+
+:root {
+    --orange-color: #F2705E;
+    --yellow-color: #FEEFD0;
+    --purple-color: #776279;
+    --purple-dark-color: #5C3255;
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: #9497A1;
+    --primary-color: #0091ce;
+    --footer-color: #F5F5F5;
+    --header-height: 80px;
+    --hover-color: #02638c;
+}
+.logo{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form_btn{
+    margin-left: 470px;
+}
+
+.form_btn-register{
+    margin-left: 518px;
+}
+
+
+td.tbold{
+    font-weight: bold;
+    width: 200px;
+}
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Button */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    border: 2px solid var(--black-color);
+    height: 40px;
+    padding: 0 24px;
+    width: fit-content;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    transition: all .2s linear;
+}
+
+.btn--orange {
+    color: var(--white-color);
+    background-color: var(--orange-color);
+    border: 2px solid var(--orange-color);
+}
+
+.btn--orange:hover {
+    color: var(--orange-color);
+    background-color: var(--white-color);
+    border: 2px solid var(--orange-color);
+}
+
+/* Toast */
+#toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    min-height: 80px;
+    background-color: var(--white-color);
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 99999;
+    transition: all linear 0.3s;
+    animation: showToast ease-in-out .3s, fadeOut linear 1s 4s forwards;
+}
+
+.toast+.toast {
+    margin-top: 16px;
+}
+
+.toast:before {
+    content: "";
+    position: absolute;
+    height: calc(100% - 16px);
+    width: 4px;
+    border-radius: 2px;
+}
+
+.toast--success:before {
+    background-color: #20A779;
+}
+
+.toast__icon {
+    font-size: 3rem;
+    padding: 0 16px 0 20px;
+}
+
+.toast--success .toast__icon {
+    color: #20A779;
+}
+
+.toast__body {
+    flex-grow: 1
+}
+
+.toast__title {
+    font-size: 1.8rem;
+}
+
+.toast__msg {
+    color: var(--gray-color);
+    font-size: 1.6rem;
+    margin-top: 6px;
+}
+
+.toast__close {
+    font-size: 2rem;
+    padding: 0 16px;
+    color: var(--gray-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes showToast {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 24px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
